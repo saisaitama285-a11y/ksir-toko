@@ -2,50 +2,30 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Kasir - Dashboard</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Kasir Fast Pro - Enterprise Edition</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <style>
-        /* Loading animation sederhana */
-        .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #3498db;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 2s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore-compat.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-slate-50 min-h-screen transition-colors duration-500">
 
-    <div id="main-content" class="container mx-auto p-4 min-h-screen flex items-center justify-center">
-        <div class="text-center">
-            <div class="loader mx-auto mb-4"></div>
-            <p class="text-slate-500 font-medium">Sedang memuat sistem kasir...</p>
-            <p class="text-xs text-slate-400 mt-2">Pastikan koneksi internet stabil</p>
+    <div id="login-screen" class="fixed inset-0 bg-slate-900 flex items-center justify-center z-50 p-4">
         </div>
-    </div>
 
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <div id="main-app" class="hidden">
+        </div>
+
+    <div id="receipt-modal" class="fixed inset-0 bg-slate-900/80 hidden items-center justify-center z-50 no-print p-4 backdrop-blur-sm">
+        </div>
 
     <script src="assets/js/config.js"></script>
-    
     <script src="assets/js/services.js"></script>
-    
     <script src="assets/js/ui.js"></script>
-    
     <script src="assets/js/app.js"></script>
-
 </body>
 </html>
