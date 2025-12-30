@@ -19,3 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
 function initIcons() {
     if (typeof lucide !== 'undefined') lucide.createIcons();
 }
+
+
+db.collection('transactions').get().then(() => {
+    console.log("Koneksi Firebase Berhasil!");
+}).catch((error) => {
+    console.error("Koneksi Gagal:", error.message);
+    alert("Koneksi Firebase Gagal: " + error.message);
+});
